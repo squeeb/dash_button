@@ -8,13 +8,14 @@ import pyaudio
 import wave
 import requests
 
-LOGLEVEL='INFO'
+LOGLEVEL='DEBUG'
 
 cwd = os.getcwd()
 
 def get_ifttt_webhook_key():
     keyfile = open(os.path.join(cwd, 'ifttt_webhook_key.txt'))
     key = keyfile.readline()
+    key = key.replace("\n","")
     keyfile.close()
     return key
 
